@@ -202,6 +202,7 @@ def run_async(
     quiet=False,
     overwrite_output=False,
     cwd=None,
+    env=None
 ):
     """Asynchronously invoke ffmpeg for the supplied node graph.
 
@@ -293,6 +294,7 @@ def run_async(
         stdout=stdout_stream,
         stderr=stderr_stream,
         cwd=cwd,
+        env=env
     )
 
 
@@ -306,6 +308,7 @@ def run(
     quiet=False,
     overwrite_output=False,
     cwd=None,
+    env=None
 ):
     """Invoke ffmpeg for the supplied node graph.
 
@@ -330,6 +333,7 @@ def run(
         quiet=quiet,
         overwrite_output=overwrite_output,
         cwd=cwd,
+        env=env
     )
     out, err = process.communicate(input)
     retcode = process.poll()
